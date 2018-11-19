@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>getTheBook</title>
+  <meta name="author" content="Missy Maloney">
+  <meta name="description" content="Select a the best book for your bookclub.">
+  <meta name="keywords" content="books, Thinkful">
+  <meta property="og:title" content="getTheBook.co" />  
+  <meta property="og:image" content="/images/getTheBook_bkgrd.jpeg" />
+  <meta property="og:description" content="Select a the best book for your bookclub." />
+  
+  <!-- Responsive viewport tag, tells small screens that it's responsive-->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Normalize.css, a cross-browser reset file-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.2.0/normalize.min.css">
+  
+  <!-- Google Font-->
+  <link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond" rel="stylesheet">
+  <!-- Fontawesome icons -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+  
+  <!-- Stylesheets-->
+  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="normalize.css">
+  <link rel="stylesheet" href="responsive.css">
+
+  <!-- AddToAny Share buttons -->
+  <script async src="https://static.addtoany.com/menu/page.js"></script>
+</head>
+<body>
+  <div id="wrapper">
+
+  <header>
+        <div class="row">
+          <div class="col-12">
+            <div class="tophalf">
+              <h1 class="tagline">Select the best book for your bookclub.</h1>
+              <form id="js-inputform">
+                <h4 > Check by Author, Title or Subject</h4> 
+                <input id="js-searchfield" type="text" name="searchfield" placeholder="Book Title.." autofocus required spellcheck="true">
+                  <button class="get-the-book-btn" type="submit"><i class="fas fa-kiwi-bird"></i>
+                      getTheBook</button>
+              </form>
+            </div>
+            <div class="definition">
+                  <div class="verbage">
+                      After being presented with a list of books based on your selection, choose one.  You will be shown information on the book, the price, and articles and videos on the book, author or topic.
+                  </div>
+            </div>
+          </div>
+        </div>
+  </header>
+
+  <main>
+    <div class="row">
+    </div>  
+
+    <div class="row">
+  </div>
+  </main>
+
+    <footer>
+      <div class="row newsearchrow">
+        <div class="col-12">
+          <div class="footerbox">
+              <div class="boxshadow">
+                  <div class="topbox">
+                    <h2 class="footerboxtitle"><i class="fa fa-share-alt" aria-hidden="true"></i> SHARE</h2>
+                    <p class="share">Know someone who&rsquo;d find this useful?  Share it on your social media<i>!</i></p>
+                    <div class="sharebuttons a2a_kit a2a_kit_size_32 a2a_default_style">
+                        <a class="soc a2a_dd" href="https://www.addtoany.com/share"></a>
+                        <a class="soc a2a_button_email"></a>
+                        <a class="soc a2a_button_facebook"></a>
+                        <a class="soc a2a_button_twitter"></a>
+                        <a class="soc a2a_button_linkedin"></a>
+                    </div>
+                  </div>
+                  <div class="bottombox">
+                    <div class="searchagain">
+                      <a id="newsearch" href="#js-inputform">
+                        <div id='searchdoubleup'>
+                          <i class="fas fa-angle-double-up" aria-hidden="true" ></i>
+                        </div>
+                        <div id='searchsearch'>
+                          <i class="fas fa-search" aria-hidden="true"></i>
+                        </div>
+                        <div id='searchwords'>
+                          <span>Search Again?</span>
+                        </div>
+                      </a>
+                    </div>
+                    <div class="companylogo">
+                      <a href="http://www.inspiredtechnologycoaching.com" target="_blank">
+                        <div id='cowords'>
+                          <span id="builtby">Built by </span>
+                        </div>
+                        <div id='cologo'>
+                          <img src="images/itc_icon.png" height="30px">
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+            </div>
+        </div>
+      </div>
+    </footer>
+     
+  </div>
+    <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+    <script src="index.js"></script>      
+</body>
+</html>
