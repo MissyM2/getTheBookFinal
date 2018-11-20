@@ -128,7 +128,7 @@ const showList = function renderListOfBooks(listOfBooksData) {
         };
         listOfBooksHtml += `<div class="book"><div class="bookthumbtable-cell"><img class="listofbooksthumb" src="${bookImage}"></img>` + 
                             `</div><div class="listofbookstable-cell"><div class="headerinfo"><div class="author-name-style">${authName}</div>` +
-                            `<div class="title-style-1">${bookTitle}</div></div><div class="resultbody"><div class="pub-style"><div class="pubwords"> Publisher:</div>` + 
+                            `<div>${bookTitle}</div></div><div class="resultbody"><div class="pub-style"><div class="pubwords"> Publisher:</div>` + 
                             `<div class="pubdata">${pub}</div></div><div class="js-categories"><div class="genwords"> Genres: </div><div class="gendata">${bookGenres}</div>` + 
                             `</div><div class="ratingwords">Average Rating: </div><div class="ratingdata">${aveRating}</div><div class="desc-style">${txtSnippet}</div>` +
                             `</div><div class="itemid js-itemid" data-bookId="${dtaId}">${dtaId}</div></div></div></div>`;
@@ -164,9 +164,16 @@ const showBook = function renderSelectedBookData(selectedBookData) {
     bookImage = selectedBookData.volumeInfo.imageLinks.thumbnail;
   };
 
+  //if there is no description listed listed for the book
+  if (typeof(selectedBookData.volumeInfo.selDesc) =='undefined' || selectedBookData.volumeInfo.selDesc === null) {
+    selectedBookDescription = 'no description for this book.';
+  } else {
+    selectedBookDescription = selectedBookData.volumeInfo.selDesc;
+  };
+
   //if there are no ratings listed for the book
   if (typeof(selectedBookData.volumeInfo.averageRating) =='undefined' || selectedBookData.volumeInfo.averageRating === null) {
-    selectedBookRatings = 'There are no ratings for this book.';
+    selectedBookRatings = 'no ratings for this book.';
   } else {
     selectedBookRatings = 'Average Rating of ' + selectedBookData.volumeInfo.averageRating + ' out of ' + selectedBookData.volumeInfo.ratingsCount + ' ratings.';
   };
@@ -181,13 +188,13 @@ const showBook = function renderSelectedBookData(selectedBookData) {
       pricinginfoHtml = 'There is some other status that I haven"t considered.';
     }
 } else {
-  pricinginfoHtml = '<div class="notForSale">This book is not for sale through Google Play.</div>';
+  pricinginfoHtml = '<div class="notForSale">not for sale through Google Play.</div>';
 };
   overviewHtml = `<div class="overviewitem"><div class="indbookheaderinfo"><div class="indbookthumbtable-cell"><img src='${bookImage}' class="js-thumbnail"></div>` +
-                 `<div class="indbooktable-cell"><div class="headerinfo"><div class="title-style-1">${selBookTitle}</div><div class="author-name-style">${selAuthor}</div></div>` + 
+                 `<div class="indbooktable-cell"><div class="headerinfo">${selBookTitle}</div><div class="author-name-style">${selAuthor}</div></div>` + 
                  `<div class = "resultbody"><div class="pub-style"><div class="pubwords">Publisher/Date:</div><div class="pubdata">${selPublisher}  ${selPubDate}</div></div>` +
                  `<div class="js-average-rating">${selectedBookRatings}</div><div class="pagecount">${pc} page(s)</div><div class="saleprice">${pricinginfoHtml}</div>` +
-                 `<div class="desc-style">${selDesc}</div></div></div></div></div></div>`;
+                 `<div class="desc-style">${selectedBookDescription}</div></div></div></div></div></div>`;
   $('.boxshadow').first().append(overviewHtml);
   $('.js-author').css('float', 'initial');
   $('.pub-style').css('float', 'initial');
@@ -205,7 +212,7 @@ const showYt = function renderYoutubeData(ytData) {
     ytTitle = ytData.items[i].snippet.title;
     ytDesc = ytData.items[i].snippet.description;
     ytVidId = ytData.items[i].id.videoId;
-    ytHtml += `<div class="youtubeitem"><div class="headerinfo"><div class="title-style-1">${ytTitle}</div>` +
+    ytHtml += `<div class="youtubeitem"><div class="headerinfo"><div>${ytTitle}</div>` +
               `</div><div class="resultbody"><div class="ytdesc-style">${ytDesc}</div></div><div class="myVideo" id="' + i + '">` +
               `<iframe class="resp-iframe" data-videoIndex="' + 0 + '" src="https://www.youtube.com/embed/${ytVidId}?controls=1">` +
               `</iframe></div></div>`;
@@ -231,7 +238,7 @@ const showNews = function renderNewsData(newsData) {
     } else {
       authName = newsData.articles[i].author;
     };
-    newsHtml += `<div class="newsitem"><div class="headerinfo"><div class="title-style-1">${newsTitle}</div><div class="author-name-style">Author:  ${authName}</div></div>` +
+    newsHtml += `<div class="newsitem"><div class="headerinfo"><div>${newsTitle}</div><div class="author-name-style">Author:  ${authName}</div></div>` +
                 `<div class="resultbody"><div class="js-subtitle">${newsDesc}</div><div class="read"><a href="${newsUrl}" target="_blank">Click here to read the article </a></div></div></div>`;
   });
   $('.js-news').append(newsHtml);
@@ -256,7 +263,7 @@ const showWiki = function renderWikiData(authorData) {
       wikiThumbSource = '<img src="' + authorData.pages[pageId].thumbnail.source + '"';
     };
 
-      wikiHtml += `<div class="wikiitem"><div class="headerinfo"><div class="wikiimg">${wikiThumbSource}</div><div class="title-style-1">${wikiTitle}</div></div><div class="resultbody">` + 
+      wikiHtml += `<div class="wikiitem"><div><div class="wikiimg">${wikiThumbSource}</div><div class="headerinfo">${wikiTitle}</div></div><div class="resultbody">` + 
       `<div class="js-subtitle">${wikiExtract}</div></div><hr><p class="wikilink"><a href="http://en.wikipedia.org/wiki/${wikiTitle}" target="_blank">` + 
       `<i class="fab fa-wikipedia-w"></i></i> &nbsp;More on Wikipedia</a></p>`;
   };
@@ -548,7 +555,8 @@ function watchSubmit() {
     event.preventDefault();
     $('html, body').animate({ scrollTop: $('header').offset().top});
     document.getElementById('js-inputform');
-    
+    $('input#js-searchfield').val('');
+  
     $('input#js-searchfield').focus();
     $('.content').empty();
     $('header').show();
