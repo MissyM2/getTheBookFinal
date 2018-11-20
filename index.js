@@ -128,17 +128,18 @@ const showList = function renderListOfBooks(listOfBooksData) {
         };
         listOfBooksHtml += `<div class="book"><div class="bookthumbtable-cell"><img class="listofbooksthumb" src="${bookImage}"></img>` + 
                             `</div><div class="listofbookstable-cell"><div class="headerinfo"><div class="author-name-style">${authName}</div>` +
-                            `<div>${bookTitle}</div></div><div class="resultbody"><div class="pub-style"><div class="pubwords"> Publisher:</div>` + 
+                            `<div>${bookTitle}</div><div class="resultbody"><div class="pub-style"><div class="pubwords"> Publisher:</div>` + 
                             `<div class="pubdata">${pub}</div></div><div class="js-categories"><div class="genwords"> Genres: </div><div class="gendata">${bookGenres}</div>` + 
                             `</div><div class="ratingwords">Average Rating: </div><div class="ratingdata">${aveRating}</div><div class="desc-style">${txtSnippet}</div>` +
-                            `</div><div class="itemid js-itemid" data-bookId="${dtaId}">${dtaId}</div></div></div></div>`;
+                            `</div><div class="itemid js-itemid" data-bookId="${dtaId}">${dtaId}</div></div></div></div></div>`;
     });
     listOfBooksHtml+='</div>';
   };
 
   $('.listofbookstable').append(listOfBooksHtml);
   $('.boxshadow').first().append('</div>');
-  $('.col-12').append('</div')
+  $('.col-12').append('</div');
+  $('.footerbox').show();
   
 }
 
@@ -191,10 +192,10 @@ const showBook = function renderSelectedBookData(selectedBookData) {
   pricinginfoHtml = '<div class="notForSale">not for sale through Google Play.</div>';
 };
   overviewHtml = `<div class="overviewitem"><div class="indbookheaderinfo"><div class="indbookthumbtable-cell"><img src='${bookImage}' class="js-thumbnail"></div>` +
-                 `<div class="indbooktable-cell"><div class="headerinfo">${selBookTitle}</div><div class="author-name-style">${selAuthor}</div></div>` + 
+                 `<div class="indbooktable-cell"><div class="headerinfo">${selBookTitle}</div><div class="author-name-style">${selAuthor}</div>` + 
                  `<div class = "resultbody"><div class="pub-style"><div class="pubwords">Publisher/Date:</div><div class="pubdata">${selPublisher}  ${selPubDate}</div></div>` +
                  `<div class="js-average-rating">${selectedBookRatings}</div><div class="pagecount">${pc} page(s)</div><div class="saleprice">${pricinginfoHtml}</div>` +
-                 `<div class="desc-style">${selectedBookDescription}</div></div></div></div></div></div>`;
+                 `<div class="desc-style">${selectedBookDescription}</div></div></div></div></div>`;
   $('.boxshadow').first().append(overviewHtml);
   $('.js-author').css('float', 'initial');
   $('.pub-style').css('float', 'initial');
@@ -560,6 +561,7 @@ function watchSubmit() {
     $('input#js-searchfield').focus();
     $('.content').empty();
     $('header').show();
+    $('.footerbox').hide();
   }));
 
   //listener for book selection; on click, get information on selected book

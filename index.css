@@ -149,6 +149,7 @@
 
   #js-searchfield {
     width:90%;
+    padding: 3px 3px 3px 10px;
   }
 
   .definition {
@@ -187,6 +188,7 @@
   }
 
   .headerinfo {
+    margin-left: 10px;
     padding-bottom:3px;
     text-align: center;
   }
@@ -296,11 +298,12 @@
 
 
       /* book list */
+
       .book {
         float:left;
         border-bottom:1px lightgray solid;
         margin-bottom:10px;
-        max-height:240px;
+        /*max-height:240px;*/
         padding:3px;
         width:100%;
       }
@@ -361,7 +364,9 @@
       }
 
       .resultbody {
-        padding-bottom:2px;
+        padding: 10px 3px 3px 3px;
+        text-align:left;
+        font-size:16px;
       }
 
       .purchasedata {
@@ -388,7 +393,6 @@
       /* individual book */
       .indbookheaderinfo {
         display:inline-block;
-    
         text-align: left;
         padding: 0 0 10px 10px;
         color:  #a54132;
@@ -422,12 +426,6 @@
         margin-top:10px;
         margin-left:20px;
       }
-
-
-      .resultbody {
-        padding-bottom:3px;
-        text-align:left;
-      }
       
       .author-name-style {
         font-weight: bold;
@@ -437,6 +435,7 @@
       .pub-style {
         padding:0 3px 5px 0;
         width: 100%;
+        font-size:16px;
       }
 
       .pubwords, .genwords, .ratingwords {
@@ -679,9 +678,8 @@
   }
   .book {
     float:left;
-    max-height:240px;
-    padding:3px;
-    width:50%;
+    padding:10px;
+    width:45%;
   }
 
   .listofbookstable {
@@ -736,7 +734,7 @@
  /*    A.   Primary Rulesets */
   /*  structural Elements   */
     body {
-      font-size: 30px;
+      font-size: 20px;
     }
 
     header {
@@ -776,7 +774,7 @@
     padding: 2%;
   }
 
-  /* titles */
+  /* titles */e
   
   .overviewitem {
     padding-left:3px;
@@ -789,16 +787,18 @@
   
   .title-style {
     display:table;
-    color:white;
     height: 90px;
+    margin-bottom:0;
     text-align:right;
     text-decoration: none;
     position:relative;
   } 
 
+
   .othertitle {
     display:table-cell;
     float:right;
+    margin-top:20px;
     position:absolute;
     right:0;
     top:0;
@@ -874,8 +874,11 @@
       box-shadow: 1px 1px 5px #777777;
       border-width: 2px;
       background-color: #BEB968;
+      display:inline-block;
       padding:5px;
       margin:0 0 10px 0;
+      width:100%;
+
     }
 
     .othertitle {
@@ -884,6 +887,8 @@
       position:absolute;
       top:0;
       right:0;
+      width:100%;
+
     }
     
     .appicons {
@@ -891,41 +896,25 @@
       width:40px;
       display:inline-block;
       vertical-align:middle;
-      float:left;
     }
     
     .titleverbage {
-      border:1px solid green;
-      display:inline-block;
       vertical-align:middle;
-      font-size:14px;
-      width:100%;
     }
+
     .title-style {
-      border:1px solid orange;
       padding: 5px;
-      text-align:center;
-      font-size:12px;
       width:100%;
     } 
-    .othertitle {
-      border:1px solid red;
-      display:table-cell;
-      float:right;
-      position:absolute;
-      top:0;
-      right:0;
-
-    }
+    
     
 
       /*  API data:  Google Books   */     
             /*   book list */
             .book {
               float:left;
-              width:50%;
-              padding:3px;
-              height:216px;
+              width:45%;
+              padding:10px;
             }
 
             .listofbookstable {
@@ -963,32 +952,14 @@
               vertical-align:top;
               width:85%;
               padding-left:10px;
+            }
               
-            }
-            .indbookheaderinfo {
-              display:inline-block;
-              font-size: 14px;
-              text-align: left;
-              padding: 0 0 10px 10px;
-              color:  #a54132;
-            }
-            
             .indbookbodyinfo {
               float:left;
               padding:5px 10px 5px 12px;
             }
-            
-            .resultbody {
-              font-size: 12px;
-              padding-bottom:3px;
-              text-align:left;
-            }
-            
-            .otherdata {
-              font-size:12px;
-            }
+
             .title-style-1 {
-              font-size:14px;
               font-weight:bold;
               padding:0 3px 5px 0;
               width:100%;
@@ -998,11 +969,6 @@
             .author-name-style {
               font-weight: bold;
               width:100%;
-            }
-            
-            .pub-style {
-              padding:0 3px 5px 0;
-              width: 100%;
             }
             
             .pubwords, .genwords, .ratingwords {
@@ -1019,7 +985,6 @@
             }
             
             .desc-style {
-              font-size: 12px;
               color:  #0B4863;
               margin-top:5px;
               text-align:left;
@@ -1039,6 +1004,13 @@
       /*  api data:  Wiki   */
 
     /* footer  */
+    .newsearchrow {
+      display:none;
+    }
+
+    .footerbox {
+      display:none;
+    }
 
 
   /*  Other Decorative Styles                                               */
@@ -1150,7 +1122,7 @@
     .nextlist:hover,
     .search-again:hover {
     cursor:pointer;
-    color:orange;
+    color:#F1C0B1;
     }
 
 }
