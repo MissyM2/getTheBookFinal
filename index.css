@@ -49,6 +49,10 @@ a {
   text-decoration: none;
 }
 
+.hidden {
+  display:none;
+}
+
 a, 
 button, 
 .fas, 
@@ -74,6 +78,7 @@ i {
 
 .fa-angle-double-down, 
 .fa-angle-double-up {
+  margin-top:30px;
   color:  #0B4863;
   -webkit-transition-property: color;
      -moz-transition-property: color;
@@ -261,14 +266,14 @@ input {
   text-align:right;
   color:white;
   position:relative;
-  font-size:14px;
+  font-size:16px;
   width:100%;
 }
 
 .nextyt,
 .nextnews {
   display:none;
-  font-size:12px;
+  font-size:16px;
 }
 
 .title-style {
@@ -314,7 +319,11 @@ input {
 .titleverbage {
   display:inline-block;
   vertical-align:middle;
-  font-size:14px;
+  font-size:16px;
+}
+
+.scroll-for-details {
+  display:none;
 }
 
 @keyframes colorchange {
@@ -336,8 +345,9 @@ input {
 
 
 .back-to-list,
-.nextlist {
-  font-size:12px;
+.nextlist,
+.search-again {
+  font-size:16px;
   text-align:right;
 }
 
@@ -345,9 +355,18 @@ input {
 .nextnews:hover, 
 .nextwiki:hover, 
 .back-to-list:hover,
-.nextlist:hover {
+.nextlist:hover,
+.search-again:hover {
   cursor:pointer;
-  color:#0B4863;
+  color:orange;
+}
+
+.search-again {
+  padding-right:20px;
+}
+
+.nav-buttons {
+  padding-top:10px;
 }
 
 .myVideo {
@@ -407,7 +426,7 @@ input {
 }
 
 .headerinfo {
-  font-size: 14px;
+  font-size: 16px;
   text-align: center;
   padding: 0 0 10px 0;
   color:  #a54132;
@@ -466,7 +485,7 @@ input {
 }
 .indbookheaderinfo {
   display:inline-block;
-  font-size: 14px;
+  font-size: 16px;
   text-align: left;
   padding: 0 0 10px 10px;
   color:  #a54132;
@@ -487,7 +506,7 @@ input {
   font-size:12px;
 }
 .title-style-1 {
-  font-size:14px;
+  font-size:16px;
   font-weight:bold;
   padding:0 3px 5px 0;
   width:100%;
@@ -573,7 +592,7 @@ iframe {
   margin-bottom: 20px;
   margin-top:10px;
   margin-left:20px;
-  font-size:14px;
+  font-size:16px;
 }
 
 /* Footer rules */
@@ -599,13 +618,13 @@ footer {
 
 .share {
   text-align:left;
-  font-size:14px;
+  font-size:16px;
 }
 
 .searchagain {
   width:50%;
   position:absolute;
-  font-size:14px;
+  font-size:16px;
 }
 
 .sharebuttons {
@@ -631,7 +650,7 @@ footer {
 
 #builtby {
   color:#a54132;
-  font-size:14px;
+  font-size:16px;
 }
 
 #builtby:hover {
@@ -647,18 +666,30 @@ footer {
 }
 
 /* Media Queries */
+/*
 @media only screen and (min-height: 450px) {
 header {
     height: 100vh;
 }
 }
+*/
+/** ONLY MOBILE **/
+@media only screen and (max-width: 320px) {
 
-
-@media only screen and (max-width: 767px) {
-header {
+/* generic classes */
+  header {
     padding: 10px;
 }
 
+h4 {
+  color: white;
+  font-size:16px;
+  font-weight:50;
+}
+
+input {
+  width:100%;
+}
 
 .js-youtube {
   width: 100%;
@@ -668,18 +699,16 @@ header {
   margin-top:50px;
   text-align:center;
 }
-h4 {
-  color: white;
-  font-size:14px;
-  font-weight:50;
-}
 
+/* intro page area */
 .banner {
   text-align:center;
 }
 
-input {
-  width:100%;
+.headerinfo {
+  font-size: 16px;
+  text-align: center;
+  padding-bottom:3px;
 }
 
 .logo { 
@@ -693,42 +722,69 @@ input {
 .get-the-book-logo {
   padding: 13px 25px 10px 25px;
 }
+
+.definition {
+  text-align: center;
+  margin:50px 10px 50px 10px;
+}
+
 .verbage { 
   width:100%;
-  margin-top: 10px; 
-  padding: 5px 12px 12px 12px;
-  font-size:12px;
+  font-size:16px;
+}
+
+.scroll-for-details {
+  display:block;
+  color:#0B4863;
+  padding-top:15px;
+  padding-bottom:2px;
 }
 
 .title-style {
   padding: 5px;
+  margin-bottom:10px;
   text-align:center;
-  font-size:12px;
+  font-size:16px;
 } 
 
-.headerinfo {
-  font-size: 14px;
-  text-align: center;
-  padding-bottom:3px;
+.boxshadow {
+  padding:3px;
 }
 
+.boxtitle {
+  padding:2px;
+  margin:0 0 15px 0;
+}
+
+.back-to-list,
+.nextlist,
+.search-again {
+  text-align:center;
+  padding-top:10px;
+  color:#0B4863;
+}
+
+
+/* book classes and ids */
 .book {
   float:left;
   width:100%;
+  border-bottom:1px lightgray solid;
+  margin-bottom:10px;
 }
 
 .bookthumbtable-cell {
-  width:20%;
+  display:none;
 }
 
 .listofbookstable-cell {
   width:100%;
+  display:inline-block;
   text-align:center;
 }
 
 .indbookthumbtable-cell {
-    vertical-align:top;
-    text-align:center;
+    display:none;
    
   }
 .indbooktable-cell {
@@ -737,9 +793,18 @@ input {
   padding-left:none;
 }
 
+.titleverbage {
+  text-align:center;
+  font-size:16px;
+}
 .slidedown {
   width:100%;
   float:none;
+}
+
+.othertitle {
+  clear:both;
+  position:static;
 }
 
 .resultbody {
@@ -751,7 +816,7 @@ input {
   margin-bottom: 20px;
   margin-top:10px;
   margin-left:20px;
-  font-size:12px;
+  font-size:16px;
 }
 
 .searchagain, .companylogo {
@@ -760,18 +825,42 @@ input {
   width:100%;
   position:unset;
 }
-.definition {
-  text-align: center;
-  margin:50px 10px 50px 10px;
-}
+
+
 
 .searchagain {
   padding-bottom:5px;
   border-bottom:1px solid #a54132;
   padding-bottom:5px;
 }
-.companylogo {
-  float:none;
-  margin-top: 8px;
 }
+
+/** FOR MOBILE & TABLET **/
+
+@media only screen and (max-width: 991px) {
+    
+}
+
+/** ONLY TABLET **/
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  
+}
+
+/** TABLET & FORWARD **/
+
+@media only screen and (min-width: 768px) {
+   
+}
+
+/** DESKTOP & FORWARD **/
+
+@media only screen and (min-width: 991px) {
+  
+}
+
+/** LARGE & FORWARD **/
+
+@media only screen and (min-width: 1200px) {
+    
 }

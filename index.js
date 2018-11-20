@@ -14,16 +14,20 @@ const youtubeURL = 'https://www.googleapis.com/youtube/v3/search';
 const wikiURL = 'https://en.wikipedia.org/w/api.php';
 
 //***Render Headers
-//Render list of books based on selecction
+//Render list of books based on selection
 const showListH = function renderListOfBooksHeader() {
-  $('.content').remove();
+  //$('.content').remove();
+  $('.content').empty();
   let listofbooksHeader='';
   listofbooksHeader = '<div class="col-12"><div class="boxshadow"><div class="boxtitle booklisttitle"><div class="title-style"><div class="slidedown"></div>' + 
                       '<div title="othertitle"><div class="appicons"><i class="fas fa-kiwi-bird"></i></div><div class="titleverbage"><span class="titlewords">' + 
-                      'Select one of the following books to get more information</span></div><p><div class="nextlist js-nextlist">More books</div></div></div></div>';
-  $('.row:nth-of-type(2)').append('<div class="content">');
+                      'Select one of the following books to get more information</span></div><div class="nav-buttons"><span class="search-again js-search-again">Search Again</span><span class="nextlist js-nextlist">More books</span></div></div></div></div>';
+  $('.row:nth-of-type(2)').append('<div class="content hidden">');
   $('.content').append(listofbooksHeader);
-  $('html, body').animate({ scrollTop: $('main').offset().top}); 
+  $('.content').removeClass('hidden');
+  $('header').hide();
+
+ 
 }
 
 // Render Single Book header
@@ -32,7 +36,7 @@ const showBookH = function renderSelectedBookHeader() {
   $('.content').remove();
   selectedbookHeaderHtml = '<div class="col-12"><div class="boxshadow"><div class="boxtitle booklisttitle" ><div class="title-style"><div class="slidedown"></div>' + 
                           '<div class="othertitle"><div class="appicons"><i class="fas fa-kiwi-bird"></i></div><div class="titleverbage"><span class="titlewords">' + 
-                          'Overview of the book you selected<span></div><p><div class="back-to-list js-back-to-list">Back to List</div></div></div></div>';
+                          'Overview of the book you selected<span></div><div class="nav-buttons"><span class="search-again js-search-again">Search Again</span><span class="back-to-list js-back-to-list">Back to List</span></div><div class="scroll-for-details"><span>Scroll or videos, news and wiki.</span></div></div></div></div>';
   $('.row:nth-of-type(2)').append('<div class="content">');
   $('.content').append(selectedbookHeaderHtml);
 
@@ -44,7 +48,7 @@ const showYtH = function renderYoutubeHeader() {
   let youtubeHeaderHtml = '';
   youtubeHeaderHtml = '<div class="boxtitle youtubetitle"><div class="title-style"><div class="slidedown sdyoutube"><i id="youtubeangledown" class="fas fa-angle-double-down" aria-hidden="true" ></i>' + 
                       '<i id="youtubeangleup" class=" fas fa-angle-double-up" aria-hidden="true" style="display:none" ></i></div><div class="othertitle"><div class="appicons"><i class="fas fa-handshake"></i>' + 
-                      '</div><div class="titleverbage"><span class="titlewords">Videos on Author or Title</span></div><p><div class="nextyt js-nextyt">More results</div></div></div></div>';
+                      '</div><div class="titleverbage"><span class="titlewords">Videos on Author or Title</span></div><div class="nextyt js-nextyt">More results</div></div></div></div>';
   $('.js-youtube').append(youtubeHeaderHtml);
 }
 
@@ -54,7 +58,7 @@ const showNewsH = function renderNewsHeader() {
   let newsHeaderHtml = '';
   newsHeaderHtml = '<div class="boxtitle newstitle"><div class="title-style"><div class="slidedown sdnews"><i id="newsangledown" class="fas fa-angle-double-down" aria-hidden="true" ></i>' + 
                   '<i id="newsangleup" class=" fas fa-angle-double-up" aria-hidden="true" style="display:none" ></i></div><div class="othertitle"><div class="appicons"><i class="fas fa-star"></i>' + 
-                  '</div><div class="titleverbage"><span class="titlewords">News on Author or Title</span></div><p><div class="nextnews js-nextnews">More results</div></div></div></div>';
+                  '</div><div class="titleverbage"><span class="titlewords">News on Author or Title</span></div><div class="nextnews js-nextnews">More results</div></div></div></div>';
   $('.js-news').append(newsHeaderHtml);
 }
 //Render Wiki header
@@ -300,6 +304,7 @@ const googleList = function getGoogleBooksAPIData(userSelectedSearchTerm) {
 
 //AJAX call to Google Books for next set of data
 const listNext = function getGoogleBooksAPINextList(userSelectedSearchTerm) {
+  $('.content').remove();
   state.googleStartIndex += 10;
   const params = {
     q: `"${userSelectedSearchTerm}"`,
@@ -318,6 +323,7 @@ const listNext = function getGoogleBooksAPINextList(userSelectedSearchTerm) {
       throw new Error(response.text);
     })
     .then(googleJsonResp => {
+      let dataId='';
       showListH();
       showList(googleJsonResp);
     })
@@ -525,6 +531,7 @@ function watchSubmit() {
     e.preventDefault();
     const queryTarget = $(e.currentTarget).find('#js-searchfield');
     userSelectedSearchTerm  = queryTarget.val();
+    $('.content').remove();
     googleList(userSelectedSearchTerm);
     
   });
@@ -532,7 +539,17 @@ function watchSubmit() {
   //get next set of books
   $(document).on('click','.js-nextlist', (function(event){
     event.preventDefault();
+    
     listNext(userSelectedSearchTerm);
+  }));
+
+  //new search
+  $(document).on('click','.js-search-again', (function(event){
+    event.preventDefault();
+    document.getElementById('js-inputform');
+    $('input#js-searchfield').focus();
+    $('.content').empty();
+    $('header').show();
   }));
 
   //listener for book selection; on click, get information on selected book
@@ -550,13 +567,14 @@ function watchSubmit() {
   })
 
   //user clicks the footer to fire new search
+  /*
   $('a#newsearch').click(function(e) {
     e.preventDefault();
     document.getElementById('js-inputform');
     $('html, body').animate({ scrollTop: $('header').offset().top});
     $('input#js-searchfield').focus();
   });
-
+*/
  //listener for youtube data
   $(document).on('click', '.sdyoutube', (function(e){
     e.preventDefault();

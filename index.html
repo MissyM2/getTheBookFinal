@@ -33,7 +33,7 @@
 <body>
   <div id="wrapper">
 
-  <header>
+  <header role="banner">
         <div class="row">
           <div class="col-12">
             <div class="tophalf">
@@ -49,20 +49,19 @@
                   <div class="verbage">
                       After being presented with a list of books based on your selection, choose one.  You will be shown information on the book, the price, and articles and videos on the book, author or topic.
                   </div>
+                  <div id="js-error-message">
+                </div>
             </div>
           </div>
         </div>
   </header>
 
-  <main>
-    <div class="row">
-    </div>  
-
-    <div class="row">
-  </div>
+  <main role="main">
+      <div class="row"></div>  
+      <div class="row"></div>
   </main>
 
-    <footer>
+    <footer role="content-info">
       <div class="row newsearchrow">
         <div class="col-12">
           <div class="footerbox">
@@ -79,11 +78,8 @@
                     </div>
                   </div>
                   <div class="bottombox">
-                    <div class="searchagain">
+                    <div class="searchagain js-search-again">
                       <a id="newsearch" href="#js-inputform">
-                        <div id='searchdoubleup'>
-                          <i class="fas fa-angle-double-up" aria-hidden="true" ></i>
-                        </div>
                         <div id='searchsearch'>
                           <i class="fas fa-search" aria-hidden="true"></i>
                         </div>
@@ -93,14 +89,9 @@
                       </a>
                     </div>
                     <div class="companylogo">
-                      <a href="http://www.inspiredtechnologycoaching.com" target="_blank">
                         <div id='cowords'>
-                          <span id="builtby">Built by </span>
+                          <span id="builtby">Built by Missy Maloney</span>
                         </div>
-                        <div id='cologo'>
-                          <img src="images/itc_icon.png" height="30px">
-                        </div>
-                      </a>
                     </div>
                   </div>
                 </div>
