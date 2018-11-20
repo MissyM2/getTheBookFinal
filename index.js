@@ -546,7 +546,9 @@ function watchSubmit() {
   //new search
   $(document).on('click','.js-search-again', (function(event){
     event.preventDefault();
+    $('html, body').animate({ scrollTop: $('header').offset().top});
     document.getElementById('js-inputform');
+    
     $('input#js-searchfield').focus();
     $('.content').empty();
     $('header').show();
