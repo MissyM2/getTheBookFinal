@@ -101,6 +101,7 @@ const showList = function renderListOfBooks(listOfBooksData) {
         } else {
           bookImage = listOfBooksData.items[i].volumeInfo.imageLinks.thumbnail;
         };
+        bookImage = bookImage.substr(0,4) + "s" + bookImage.substr(4);
 
         //if there is no publisher available
         if (typeof(listOfBooksData.items[i].volumeInfo.publisher) =='undefined' || listOfBooksData.items[i].volumeInfo.publisher === null) {
