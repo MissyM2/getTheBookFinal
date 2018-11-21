@@ -22,7 +22,6 @@ https://missym2.github.io/getTheBookFinal/
 4.  ![Non-mobile Version Pic 4](images/nm4.jpg "Non-Mobile Pic 4")
 5.  ![Non-mobile Version Pic 5](images/nm5.jpg "Non-Mobile Pic 5")
 6.  ![Non-mobile Version Pic 6](images/nm6.jpg "Non-Mobile Pic 6")
-7.  ![Non-mobile Version Pic 7](images/nm7.jpg "Non-Mobile Pic 7")
 
 
 
