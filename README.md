@@ -8,21 +8,21 @@ https://missym2.github.io/getTheBookFinal/
  -  [Technologies Used](#technologies-used)
 
 #### Screenshots
-1.  ![Mobile Version Pic 1](/images/m1.png "Mobile Pic 1")
-2.  ![Mobile Version Pic 2](images/m2.png "Mobile Pic 2")
-3.  ![Mobile Version Pic 3](images/m3.png "Mobile Pic 3")
-4.  ![Mobile Version Pic 4](images/m4.png "Mobile Pic 4")
-5.  ![Mobile Version Pic 5](images/m5.png "Mobile Pic 5")
-6.  ![Mobile Version Pic 6](images/m6.png "Mobile Pic 6")
-7.  ![Mobile Version Pic 7](images/m7.png "Mobile Pic 7")
+1.  ![Mobile Version Pic 1](/images/m1.jpg "Mobile Pic 1")
+2.  ![Mobile Version Pic 2](images/m2.jpg "Mobile Pic 2")
+3.  ![Mobile Version Pic 3](images/m3.jpg "Mobile Pic 3")
+4.  ![Mobile Version Pic 4](images/m4.jpg "Mobile Pic 4")
+5.  ![Mobile Version Pic 5](images/m5.jpg "Mobile Pic 5")
+6.  ![Mobile Version Pic 6](images/m6.jpg "Mobile Pic 6")
+7.  ![Mobile Version Pic 7](images/m7.jpg "Mobile Pic 7")
 
-1.  ![Non-mobile Version Pic 1](images/nm1.png "Non-Mobile Pic 1")
-2.  ![Non-mobile Version Pic 2](images/nm2.png "Non-Mobile Pic 2")
-3.  ![Non-mobile Version Pic 3](images/nm3.png "Non-Mobile Pic 3")
-4.  ![Non-mobile Version Pic 4](images/nm4.png "Non-Mobile Pic 4")
-5.  ![Non-mobile Version Pic 5](images/nm5.png "Non-Mobile Pic 5")
-6.  ![Non-mobile Version Pic 6](images/nm6.png "Non-Mobile Pic 6")
-7.  ![Non-mobile Version Pic 7](images/nm7.png "Non-Mobile Pic 7")
+1.  ![Non-mobile Version Pic 1](images/nm1.jpg "Non-Mobile Pic 1")
+2.  ![Non-mobile Version Pic 2](images/nm2.jpg "Non-Mobile Pic 2")
+3.  ![Non-mobile Version Pic 3](images/nm3.jpg "Non-Mobile Pic 3")
+4.  ![Non-mobile Version Pic 4](images/nm4.jpg "Non-Mobile Pic 4")
+5.  ![Non-mobile Version Pic 5](images/nm5.jpg "Non-Mobile Pic 5")
+6.  ![Non-mobile Version Pic 6](images/nm6.jpg "Non-Mobile Pic 6")
+7.  ![Non-mobile Version Pic 7](images/nm7.jpg "Non-Mobile Pic 7")
 
 
 
