@@ -165,6 +165,7 @@ const showBook = function renderSelectedBookData(selectedBookData) {
   } else {
     bookImage = selectedBookData.volumeInfo.imageLinks.thumbnail;
   };
+  bookImage = bookImage.substr(0,4) + "s" + bookImage.substr(4);
 
   //if there is no description listed listed for the book
   if (typeof(selectedBookData.volumeInfo.selDesc) =='undefined' || selectedBookData.volumeInfo.selDesc === null) {
