@@ -8,7 +8,7 @@ https://missym2.github.io/getTheBookFinal/
  -  [Technologies Used](#technologies-used)
 
 #### Screenshots
-1.  ![Mobile Version Pic 1](images/getTheBookmobilepic1.png "Mobile Pic 1")
+1.  ![Mobile Version Pic 1](/images/getTheBookmobilepic1.png "Mobile Pic 1")
 2.  ![Mobile Version Pic 2](images/getTheBookmobilepic2.png "Mobile Pic 2")
 3.  ![Mobile Version Pic 3](images/getTheBookmobilepic3.png "Mobile Pic 3")
 4.  ![Mobile Version Pic 4](images/getTheBookmobilepic4.png "Mobile Pic 4")
