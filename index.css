@@ -34,6 +34,7 @@
     background-position: 15% 0%;
     background-attachment: scroll;
     box-shadow: 0 0 10px black;
+    height: 600px;
     margin-bottom: 13px;
     padding:10px;
   }
@@ -103,9 +104,12 @@
   }
 
   .newsearchrow {
-    vertical-align:middle;
     background: linear-gradient( to bottom, rgba(213, 102, 75, 0.5), rgba(213, 102, 75, 0.2) );
-    box-shadow: 10px 0 0 0 black;
+    bottom: 0;
+    position: relative;
+    vertical-align:middle;
+    width: 100%;
+    display:none;
   }
 
   iframe {
@@ -522,23 +526,43 @@
     width:100%;
   }
 
+  .footerboxtitle {
+    box-shadow: 1px 1px 5px #777777;
+    border-width: 2px;
+    background-color: #BEB968;
+    color:white;
+    display:table;
+    font-size:16px;
+    height:25px;
+    padding:12px;
+    margin:0 0 10px 0;
+    position:relative;
+    text-decoration: none;
+    text-align:right;
+    width:100%;
+  }
+
+  .share {
+    float:left;
+    font-size:16px;
+    margin-right:10px;
+  }
+
   .sharebox {
-    border: 1px solid red;
     width:100%;
     text-align:center
   }
-/*
-  .share {
-    text-align:center;
-  }
-*/
+
   .sharebuttons {
     display:inline-block;
-    border:1px solid orange;
-
+    margin-bottom: 5px;
+    padding-bottom: 5px;
   }
 
   .searchagain {
+    border-bottom:1px solid #a54132;
+    font-size:16px;
+    padding-bottom:5px;
     position:absolute;
     width:50%;
   }
@@ -547,18 +571,6 @@
     display:inline-block;
     position:unset;
     text-align:center;
-    width:100%;
-  }
-
-
-  .searchagain {
-    border-bottom:1px solid #a54132;
-    padding-bottom:5px;
-  }
-
-  .sharebuttons {
-    margin-bottom: 5px;
-    padding-bottom: 5px;
     width:100%;
   }
 
@@ -575,6 +587,7 @@
 
   #builtby {
     color:#a54132;
+    font-size:16px;
   }
 
   #footerdetail {
@@ -634,11 +647,12 @@
 @media only screen and (min-width: 768px) and (max-width: 991px) {
 /*  Primary Rulesets       */
 
-/*   structural Elements     */
-    body {
-      font-size:20px;
-    }
+/*   structural Elements  */
 
+    header {
+      height:800px;
+    }
+   
     h1 {
       color: white;
       font-size:40px;
@@ -674,13 +688,11 @@
               float:left;
               padding:10px;
               max-height:500px;
-              min-height:350px;
-              width:45%;
             }
 
             .bookthumbtable-cell {
               display:table-cell;
-              width:33.33%;
+              width:20%;
               vertical-align:top;
             }
 
@@ -694,7 +706,7 @@
             .listofbookstable-cell {
               display:table-cell;
               padding-left:6px;
-              width:66.66%;
+              width:80%;
             }
 
             .listofbooksthumb {
@@ -732,10 +744,10 @@
   
 /*   Primary Rulesets */
 /*  structural Elements   */
-    body {
-      font-size: 20px;
+   /* body {
+      font-size: 16px;
     }
-
+*/
     header {
       padding: 20px 0;
     }
@@ -800,21 +812,21 @@
     right:0;
     top:0;
   }
-  
-  .footerboxtitle {
-    box-shadow: 1px 1px 5px #777777;
-    border-width: 2px;
-    background-color: #BEB968;
-    color:white;
-    display:table;
-    font-size:16px;
-    height:25px;
-    padding:12px;
-    margin:0 0 10px 0;
-    position:relative;
-    text-decoration: none;
-    text-align:right;
+
+  .share {
+    float:left;
+    font-size: 16px;
+    margin-right: 10px;
+  }
+
+  .sharebox {
     width:100%;
+    text-align:center
+  }
+
+  .sharebuttons {
+    display:inline-block;
+    margin-left:30px;
   }
   
   
@@ -884,7 +896,6 @@
       position:absolute;
       top:0;
       right:0;
-      width:100%;
 
     }
     
@@ -1115,6 +1126,24 @@
     .search-again:hover {
     cursor:pointer;
     color:#F1C0B1;
+    }
+
+    
+
+    .share {
+      float:left;
+      font-size:16px;
+      margin-right:20px;
+    }
+  
+    .sharebox {
+      width:100%;
+      text-align:center
+    }
+  
+    .sharebuttons {
+      display:inline-block;
+      margin-left:30px;
     }
 
 }

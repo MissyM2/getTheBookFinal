@@ -568,7 +568,6 @@ function watchSubmit() {
     e.preventDefault();
     selectedBookId = $(e.currentTarget).find('.js-itemid').attr('data-bookId');
     googleBook(selectedBookId);
-    
   }));
 
   //listener for back to list of books
@@ -577,15 +576,6 @@ function watchSubmit() {
     googleList(userSelectedSearchTerm);
   })
 
-  //user clicks the footer to fire new search
-  /*
-  $('a#newsearch').click(function(e) {
-    e.preventDefault();
-    document.getElementById('js-inputform');
-    $('html, body').animate({ scrollTop: $('header').offset().top});
-    $('input#js-searchfield').focus();
-  });
-*/
  //listener for youtube data
   $(document).on('click', '.sdyoutube', (function(e){
     e.preventDefault();
@@ -605,16 +595,18 @@ function watchSubmit() {
 
 //listener for news data
   $(document).on('click', '.sdnews', (function(e){
+    console.log('.sdnews has been clicked');
     e.preventDefault();
     //if the down-angle icon is visible, then go get the data and display
     if ($('#newsangledown').css('display')=='inline-block') {
+      console.log('#newsangledown');
       getNews(userSelectedSearchTerm);
       $('#newsangledown').css('display','none');
       $('#newsangleup').css('display','');
     // however, if the up-angle icon is visible, then remove all data and replace icon with the down-angle icon
     } else {
       $('.newsitem').remove();
-      $('.js-nexnews').css('display','none');
+      $('.js-nextnews').css('display','none');
       $('#newsangleup').css('display','none');
       $('#newsangledown').css('display','');
     };
