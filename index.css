@@ -47,7 +47,7 @@
   }
 
   footer {
-    background: linear-gradient( to bottom, rgba(213, 102, 75, 0.5), rgba(213, 102, 75, 0.2) );
+    /*background: linear-gradient( to bottom, rgba(213, 102, 75, 0.5), rgba(213, 102, 75, 0.2) );*/
     bottom: 0;
     margin-top: 50px;
     width: 100%;
@@ -104,6 +104,8 @@
 
   .newsearchrow {
     vertical-align:middle;
+    background: linear-gradient( to bottom, rgba(213, 102, 75, 0.5), rgba(213, 102, 75, 0.2) );
+    box-shadow: 10px 0 0 0 black;
   }
 
   iframe {
@@ -247,7 +249,7 @@
 
   .appicons {
     display:inline-block;
-    padding-right:5px;
+    padding-right:9px;
     vertical-align:middle;
     width:40px;
   }
@@ -293,17 +295,16 @@
 
   }
 
-  /*  API data:  Google Books */
+/*  API data:  Google Books */
 
 
 
-      /* book list */
+/*     book list */
 
       .book {
         float:left;
         border-bottom:1px lightgray solid;
         margin-bottom:10px;
-        /*max-height:240px;*/
         padding:3px;
         width:100%;
       }
@@ -316,6 +317,7 @@
         padding:3px;
 
       }
+
       .listofbookstable {
         display:table;
         margin:.5%;
@@ -341,12 +343,13 @@
         display:none;
       }
 
-      /* styles for individual book display */
+ /*     styles for individual book display */
 
       .indbookthumbtable-cell {
           display:none;
         
-        }
+      }
+
       .indbooktable-cell {
         width:100%;
         display:inline-block;
@@ -382,15 +385,13 @@
         overflow:auto;
       }
 
-
-
       .bookthumbtable-cell {
         display:table-cell;
         width:33.33%;
         vertical-align:middle;
       }
 
-      /* individual book */
+/*      individual book */
       .indbookheaderinfo {
         display:inline-block;
         text-align: left;
@@ -457,7 +458,7 @@
         text-align:left;
       }
 
-  /* api data:  youtube */
+/*     api data:  youtube */
   .ytdesc-style {
     margin-bottom: 10px;
   }
@@ -492,7 +493,7 @@
     width: 100%;
   }
 
-  /* data area:  wiki */
+/*     data area:  wiki */
   .wikiimg {
     height:100%;
     margin-bottom:5px;
@@ -509,25 +510,32 @@
   }
 
 
-  /* Footer rules */
+/*     Footer rules */
 
   .footerbox {
     display:table;
     float:left;
-    height:50px;
+    overflow:auto;
     padding-bottom: 1px; 
     padding-top:3px;
     position: relative;
-    transition: color 0.25s linear;
     width:100%;
   }
 
+  .sharebox {
+    border: 1px solid red;
+    width:100%;
+    text-align:center
+  }
+/*
   .share {
     text-align:center;
   }
-
+*/
   .sharebuttons {
-    padding-left:50px;
+    display:inline-block;
+    border:1px solid orange;
+
   }
 
   .searchagain {
@@ -595,10 +603,10 @@
     color:  #0B4863;
     margin-top:15px;
   }
+
   .fa-search {
     color:  #a54132;
   }
-
 
   .fa-kiwi-bird:before {
     content: "\f535";
@@ -624,9 +632,9 @@
 /** ONLY TABLET **/
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
-  /*  Primary Rulesets                                                     */
+/*  Primary Rulesets       */
 
-    /*  structural Elements                                                 */
+/*   structural Elements     */
     body {
       font-size:20px;
     }
@@ -653,65 +661,65 @@
       display:none;
     }
 
-    /*      b.  text elements                                                       */
-/*      c.  other elements                                                      */
-/*      d.  primary style classes                                               */
+    .footerbox {
+      padding-top: 15px;
+    }
 
-/*    B.  Document Areas                                                        */
-/*      a.  header                                                              */
-/*      b.  body                                                                */
-/*        1.  API data:  Google Books                                           */     
-/*          a.  book list                                                       */
 
-  .indbookthumbtable-cell {
-    display:table-cell;
-    vertical-align:top;
-    width:15%;
-   
-  }
-  .indbooktable-cell {
-    display:table-cell;
-    padding-left:10px;
-    vertical-align:top;
-    width:85%;
-   
-  }
-  .book {
-    float:left;
-    padding:10px;
-    width:45%;
-  }
+/*  Document Areas    */
+/*      body                   */
+/*        API data:  Google Books                                           */     
+/*          book list                  */
+            .book {
+              float:left;
+              padding:10px;
+              max-height:500px;
+              min-height:350px;
+              width:45%;
+            }
 
-  .listofbookstable {
-    display:table;
-    margin:.5%;
-    text-align:left;
-    width:100%;
-  }
+            .bookthumbtable-cell {
+              display:table-cell;
+              width:33.33%;
+              vertical-align:top;
+            }
 
-  .listofbookstable-cell {
-    display:table-cell;
-    padding-left:6px;
-    width:66.66%;
-  }
+            .listofbookstable {
+              display:table;
+              margin:.5%;
+              text-align:left;
+              width:100%;
+            }
 
-  .listofbooksthumb {
-    display:inline-block;
-    height:192px;
-    width:128px;
-  
-  }
-/*          b.  individual book                                                 */
+            .listofbookstable-cell {
+              display:table-cell;
+              padding-left:6px;
+              width:66.66%;
+            }
 
-  /* list of books */
+            .listofbooksthumb {
+              display:inline-block;
+              height:192px;
+              width:128px;
 
-/*        2.  API data:  News                                                   */
-/*        3.  API data:  Wiki                                                   */
-/*      c.  footer                                                              */
-/*    C.  Other Decorative Styles                                               */
-/*      a.  Fontawesome Icons                                                   */
+            }   
+      
+/*          individual book                  */
 
-  
+            .indbookthumbtable-cell {
+              display:table-cell;
+              vertical-align:top;
+              width:15%;
+            
+            }
+
+            .indbooktable-cell {
+              display:table-cell;
+              padding-left:10px;
+              vertical-align:top;
+              width:85%;
+            
+            }
   
 }
 
@@ -720,19 +728,10 @@
 /** DESKTOP & FORWARD **/
 
 
-
-
-
-/*      b.  text elements                                                       */
-/*      c.  other elements                                                      */
-/*      d.  primary style classes                                               */
-
-
-
 @media only screen and (min-width: 991px) {
   
- /*    A.   Primary Rulesets */
-  /*  structural Elements   */
+/*   Primary Rulesets */
+/*  structural Elements   */
     body {
       font-size: 20px;
     }
@@ -746,9 +745,7 @@
       overflow:auto;
     }
 
- 
-
-  /* primary style classes */
+/*   primary style classes */
 
   .boxshadow {
     padding:3px;
@@ -774,7 +771,7 @@
     padding: 2%;
   }
 
-  /* titles */e
+/*   titles */
   
   .overviewitem {
     padding-left:3px;
@@ -794,9 +791,9 @@
     position:relative;
   } 
 
-
   .othertitle {
     display:table-cell;
+    font-size:16px;
     float:right;
     margin-top:20px;
     position:absolute;
@@ -812,7 +809,7 @@
     display:table;
     font-size:16px;
     height:25px;
-    padding:5px;
+    padding:12px;
     margin:0 0 10px 0;
     position:relative;
     text-decoration: none;
@@ -821,9 +818,9 @@
   }
   
   
- /* B. Document Areas */
+/* Document Areas */
 
-    /* header  */
+/*  header  */
     .logo {
       float: left;
       padding: 5%;
@@ -852,7 +849,7 @@
       text-align:right;
     }
 
-    /* body    */
+/*  body    */
 
     .boxshadow {
       box-shadow: 1px 1px 5px #777777; 
@@ -907,12 +904,11 @@
       width:100%;
     } 
     
-    
-
-      /*  API data:  Google Books   */     
-            /*   book list */
+/*  API data:  Google Books   */     
+/*     book list */
             .book {
               float:left;
+              height:300px;
               width:45%;
               padding:10px;
             }
@@ -927,7 +923,7 @@
             .bookthumbtable-cell {
               display:table-cell;
               width:33.33%;
-              vertical-align:middle;
+              vertical-align:top;
             }
             
             .listofbookstable-cell {
@@ -935,18 +931,21 @@
               width:66.66%;
               padding-left:3px;
             }
+
             .listofbooksthumb {
               display:inline-block;
               height:192px;
               width:128px;
             
             }
+
             .indbookthumbtable-cell {
               display:table-cell;
               vertical-align:top;
               width:15%;
              
             }
+
             .indbooktable-cell {
               display:table-cell;
               vertical-align:top;
@@ -990,8 +989,7 @@
               text-align:left;
             }
 
-      /* api data: youtube */
-      
+/*     api data: youtube */
 
       .back-to-list,
       .nextlist,
@@ -1000,21 +998,15 @@
         text-align:right;
       }
 
-      /*  api data:  News   */
-      /*  api data:  Wiki   */
-
-    /* footer  */
-    .newsearchrow {
-      display:none;
-    }
+/*     footer  */
 
     .footerbox {
-      display:none;
+      padding-top: 15px;
     }
 
 
-  /*  Other Decorative Styles                                               */
-    /*  Fontawesome Icons                                                   */
+/*  Other Decorative Styles                                               */
+/*    Fontawesome Icons                                                   */
     .fa-search {
       color:  #a54132;
     }
@@ -1069,7 +1061,7 @@
       color: #9BAA37;
     }
 
-    /* hover styles   */
+/*   hover styles   */
 
     #builtby:hover {
       color:  #F1C0B1;

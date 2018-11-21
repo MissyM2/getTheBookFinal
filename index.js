@@ -139,7 +139,7 @@ const showList = function renderListOfBooks(listOfBooksData) {
   $('.listofbookstable').append(listOfBooksHtml);
   $('.boxshadow').first().append('</div>');
   $('.col-12').append('</div');
-  $('.footerbox').show();
+  $('.newsearchrow').show();
   
 }
 
@@ -303,6 +303,7 @@ const googleList = function getGoogleBooksAPIData(userSelectedSearchTerm) {
         .then(googleJsonResp => {
           showListH();
           showList(googleJsonResp);
+          $('.newsearchrow').show();
         })
         .catch(err => {
           $('#js-error-message').text(`something went terribly wrong:  ${err.message}`)
@@ -529,7 +530,7 @@ const ytNext = function getYoutubeDataNextPage(userSelectedSearchTerm){
 
 function watchSubmit() {
 //suggestions for submission text input
-  let searchEx = [ 'Want some suggestions?', 'David Grann', 'Jane Eyre', 'Radium Girls', 'William Shakespeare', 'Shakespeare', 'Louisa May Alcott', 'Jack London', 'Harry Potter', 'J. K. Rowling', 'Margaret Atwood', 'Lord of the Flies', 'America"s Cup', 'The Poisonwood Bible' ];
+  let searchEx = [ 'Want some suggestions?', 'David Grann', 'Jane Eyre', 'Radium Girls', 'William Shakespeare', 'Shakespeare', 'Louisa May Alcott', 'Jack London', 'Harry Potter', 'J. K. Rowling', 'Margaret Atwood', 'Lord of the Flies', 'The Poisonwood Bible' ];
   setInterval(function() {
     $('input#js-searchfield').attr('placeholder', searchEx[searchEx.push(searchEx.shift())-1]);
   }, 3000);
@@ -547,7 +548,6 @@ function watchSubmit() {
   //get next set of books
   $(document).on('click','.js-nextlist', (function(event){
     event.preventDefault();
-    
     listNext(userSelectedSearchTerm);
   }));
 
@@ -557,11 +557,10 @@ function watchSubmit() {
     $('html, body').animate({ scrollTop: $('header').offset().top});
     document.getElementById('js-inputform');
     $('input#js-searchfield').val('');
-  
     $('input#js-searchfield').focus();
     $('.content').empty();
     $('header').show();
-    $('.footerbox').hide();
+    $('.newsearchrow').hide();
   }));
 
   //listener for book selection; on click, get information on selected book
